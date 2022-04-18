@@ -1,0 +1,21 @@
+string pangrams(string s) {
+    transform(s.begin(),s.end(),s.begin(), ::tolower);
+    vector<int> vec(26,0);
+    int check;
+    for(int i=0;i<s.size();i++)
+    {
+        if(s[i] == ' ')
+        {
+            continue;
+        }
+        check=(int)s[i];
+        vec[check-97]++;
+    }
+    for(int i=0;i<26;i++)
+    {
+        if(vec[i]==0)
+        return "not pangram";
+    }
+    return "pangram";
+    
+}
