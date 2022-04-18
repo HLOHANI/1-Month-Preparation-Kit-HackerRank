@@ -1,0 +1,5 @@
+int findMedian(vector<int>arr) {
+sort(arr.begin(),arr.end());
+intn=arr.size();
+returnarr[n/2];
+}
