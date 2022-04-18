@@ -1,0 +1,22 @@
+string timeConversion(string s) {
+    string res = "";
+    int time = stoi(s.substr(0,2));
+    string temp = s.substr(8,2);
+    if(temp == "AM")
+    {
+        time = time % 12;
+    }
+    else if(temp == "PM")
+    {
+        time = (time % 12) + 12;
+    }
+    if(time < 10)
+    {
+        res += ("0" + to_string(time));
+    }
+    else {
+        res += (to_string(time));
+    }
+    res += s.substr(2,6);
+    return res;
+}
